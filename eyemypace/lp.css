@@ -99,7 +99,7 @@ body { background: #000; color: var(--text); }
 .about { margin-top: 144px; }
 .lang-section .about p.num { color: var(--sub); }
 
-/* ── 日本語：What / Why / How / Stance の区切り（B-101。紹介文の正本は docs/eyemypace_intro_ja.md） ── */
+/* ── What / Why / How / Stance の区切り（B-101。紹介文の正本は docs/eyemypace_intro_ja.md、英語は _en.md） ── */
 .part { margin: 144px 0 0; }
 .part:first-child { margin-top: 72px; }
 .lang-section .part-label {
@@ -108,18 +108,22 @@ body { background: #000; color: var(--text); }
   color: var(--accent); margin: 0 0 28px;
 }
 .part > .tagline { margin: 0 0 40px; }
+.lang-section[lang="en"] .part > .tagline { letter-spacing: 0; line-height: 1.3; }
 /* 本文：1文ごとに改行し、段落の間をあけて余白を多く */
-.prose p, .lang-section[lang="ja"] .feature p:not(.num) {
+.prose p, .part .feature p:not(.num) {
   font-size: 17px; color: var(--body);
   line-height: 2.05; letter-spacing: .04em;
   margin: 0 0 1.4em;
 }
-.prose p:last-child, .lang-section[lang="ja"] .feature p:last-child { margin-bottom: 0; }
+.lang-section[lang="en"] .prose p, .lang-section[lang="en"] .part .feature p:not(.num) {
+  line-height: 1.8; letter-spacing: .005em; margin-bottom: 1.2em;
+}
+.prose p:last-child, .part .feature p:last-child { margin-bottom: 0; }
 /* 使う人の心の声（「」の一言）は、見出しの次に白で */
-.lang-section[lang="ja"] .feature p.voice { color: var(--text); }
+.part .feature p.voice { color: var(--text); }
 .part .feature { margin-top: 96px; }
 .part .prose + .feature { margin-top: 88px; }
-.lang-section[lang="ja"] .feature .num { margin-bottom: 18px; }
+.part .feature .num { margin-bottom: 18px; }
 .closing .prose p { color: var(--text); }
 .sign { margin: 40px 0 0; color: var(--sub); font-size: 17px; letter-spacing: .04em; }
 
@@ -139,7 +143,7 @@ body { background: #000; color: var(--text); }
   .lead { font-size: 17px; }
   .tagline { margin-top: 56px; }
   .feature { margin-top: 88px; }
-  .prose p, .lang-section[lang="ja"] .feature p:not(.num), .sign { font-size: 16px; }
+  .prose p, .part .feature p:not(.num), .sign { font-size: 16px; }
   .part { margin-top: 112px; }
   .part:first-child { margin-top: 56px; }
   .part .feature { margin-top: 80px; }
